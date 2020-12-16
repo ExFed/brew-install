@@ -1,5 +1,5 @@
 function Get-StringHash($str) {
-  $md5 = new-Object -TypeName System.Security.Cryptography.MD5CryptoServiceProvider
+  $md5 = new-Object -TypeName System.Security.Cryptography.SHA256CryptoServiceProvider
   $utf8 = new-object -TypeName System.Text.UTF8Encoding
   return [System.BitConverter]::ToString($md5.ComputeHash($utf8.GetBytes($str)))
 }
